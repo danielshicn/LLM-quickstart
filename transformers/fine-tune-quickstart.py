@@ -53,6 +53,8 @@
 
 # In[1]:
 
+import os
+os.environ['HF_ENDPOINT'] = "https://hf-mirror.com"
 
 from datasets import load_dataset
 
@@ -174,7 +176,7 @@ model = AutoModelForSequenceClassification.from_pretrained("bert-base-cased", nu
 
 from transformers import TrainingArguments
 
-model_dir = "./models/bert-base-cased-finetune-yelp"
+model_dir = "/root/autodl-tmp/peft-models/bert-base-cased-finetune-yelp"
 
 # logging_steps 默认值为500，根据我们的训练数据和步长，将其设置为100
 training_args = TrainingArguments(output_dir=model_dir,
